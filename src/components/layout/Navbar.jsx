@@ -27,8 +27,9 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Close mobile menu when route changes
   useEffect(() => {
-    setIsOpen(false)
+    setIsOpen(false)  // eslint-disable-line react-hooks/set-state-in-effect
   }, [pathname])
 
   return (

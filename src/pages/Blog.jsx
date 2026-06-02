@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Search, Calendar, Clock, User, ArrowRight, Mail } from 'lucide-react'
+import usePageSEO from '../hooks/usePageSEO'
+import { pageMetadata } from '../utils/pageMetadata'
 import { blogPosts, blogCategories } from '../data/blog'
 import SectionHeader from '../components/ui/SectionHeader'
 import GlassCard from '../components/ui/GlassCard'
@@ -9,6 +11,7 @@ import Button from '../components/ui/Button'
 import { fadeInUp, stagger } from '../components/animations/variants'
 
 export default function Blog() {
+  usePageSEO(pageMetadata.blog)
   const [activeCategory, setActiveCategory] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
   const [email, setEmail] = useState('')

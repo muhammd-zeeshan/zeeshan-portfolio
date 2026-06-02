@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import { Check, ArrowRight } from 'lucide-react'
+import usePageSEO from '../hooks/usePageSEO'
+import { pageMetadata } from '../utils/pageMetadata'
 import SectionHeader from '../components/ui/SectionHeader'
 import GlassCard from '../components/ui/GlassCard'
 import Badge from '../components/ui/Badge'
@@ -8,22 +10,24 @@ import { services, packages } from '../data/services'
 import { fadeInUp, stagger } from '../components/animations/variants'
 
 export default function Services() {
+  usePageSEO(pageMetadata.services)
   return (
     <div className="min-h-screen">
-      <section className="pt-24 pb-8 sm:pt-32 sm:pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <SectionHeader
-          label="Services"
-          title="What I Can Do For You"
-          description="From architecting scalable iOS applications to optimizing performance — I bring deep Swift expertise and industry best practices to every project."
-        />
+      <section className="pt-24 pb-8 sm:pt-32 sm:pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader
+            label="Services"
+            title="What I Can Do For You"
+            description="From architecting scalable iOS applications to optimizing performance — I bring deep Swift expertise and industry best practices to every project."
+          />
 
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
           {services.map((service, index) => {
             const Icon = service.icon
             return (
@@ -45,12 +49,13 @@ export default function Services() {
         </motion.div>
       </section>
 
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <SectionHeader
-          label="Pricing"
-          title="Choose Your Package"
-          description="Flexible pricing tailored to your project scope. Each package is designed to deliver exceptional iOS experiences."
-        />
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader
+            label="Pricing"
+            title="Choose Your Package"
+            description="Flexible pricing tailored to your project scope. Each package is designed to deliver exceptional iOS experiences."
+          />
 
         <motion.div
           variants={stagger}
@@ -104,6 +109,7 @@ export default function Services() {
             </motion.div>
           ))}
         </motion.div>
+        </div>
       </section>
     </div>
   )

@@ -1,0 +1,21 @@
+/* humanstxt.org */
+
+/* TEAM */
+Name: Muhammad Zeeshan
+Title: iOS Developer & Mobile App Engineer
+Site: https://muhammadzeeshan.dev
+Email: mehmetzeeshan5@gmail.com
+LinkedIn: https://www.linkedin.com/in/muhammad-zeeshan-392479370
+GitHub: https://github.com/mehmetzeeshan
+Twitter: https://twitter.com/mehmetzeeshan
+
+/* THANKS */
+Thanks to: React, Vite, Tailwind CSS, Framer Motion, and the open-source community
+
+/* SITE */
+Last Update: 2026-06-02
+Language: English
+Doctype: HTML5
+IDE: VS Code
+Framework: React 19
+Build Tool: Vite

@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { Home, ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import usePageSEO from '../hooks/usePageSEO'
+import { pageMetadata } from '../utils/pageMetadata'
 import Button from '../components/ui/Button'
 import { fadeInUp } from '../components/animations/variants'
 
@@ -14,6 +16,7 @@ const floatingShapes = [
 ]
 
 export default function NotFound() {
+  usePageSEO(pageMetadata.notfound)
   return (
     <section className="section-padding min-h-screen flex items-center justify-center relative overflow-hidden">
       {floatingShapes.map((shape, i) => (

@@ -3,7 +3,7 @@ import { ArrowRight, Send, Code2, Smartphone, AppWindow, Cpu, Globe, GitBranch }
 import { Link } from 'react-router-dom'
 import Button from '../ui/Button'
 import Badge from '../ui/Badge'
-import { fadeInUp, stagger, fadeIn } from '../animations/variants'
+import { fadeInUp, stagger } from '../animations/variants'
 
 const techIcons = [
   { icon: Code2, label: 'Swift' },

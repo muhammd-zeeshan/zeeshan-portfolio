@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { MapPin, Calendar, Download } from 'lucide-react'
+import usePageSEO from '../hooks/usePageSEO'
+import { pageMetadata } from '../utils/pageMetadata'
 import SectionHeader from '../components/ui/SectionHeader'
 import GlassCard from '../components/ui/GlassCard'
 import Badge from '../components/ui/Badge'
@@ -28,6 +30,7 @@ function TimelineDot({ index }) {
 }
 
 export default function Experience() {
+  usePageSEO(pageMetadata.experience)
   const [activeCategory, setActiveCategory] = useState('All')
 
   const filteredSkills = activeCategory === 'All'
@@ -36,17 +39,18 @@ export default function Experience() {
 
   return (
     <div className="min-h-screen">
-      <section className="pt-24 pb-8 sm:pt-32 sm:pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <SectionHeader
-          label="Experience"
-          title="My Professional Journey"
-          description="Building world-class iOS and web applications with a focus on performance, architecture, and user experience."
-        />
+      <section className="pt-24 pb-8 sm:pt-32 sm:pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader
+            label="Experience"
+            title="My Professional Journey"
+            description="Building world-class iOS and web applications with a focus on performance, architecture, and user experience."
+          />
 
-        <div className="relative max-w-4xl mx-auto">
-          <div className="hidden md:block absolute left-[31px] top-0 bottom-0 w-0.5 bg-zinc-200/50 dark:bg-zinc-800/50" />
+          <div className="relative">
+            <div className="hidden md:block absolute left-[31px] top-0 bottom-0 w-0.5 bg-zinc-200/50 dark:bg-zinc-800/50" />
 
-          <div className="space-y-8">
+            <div className="space-y-8">
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.id}
@@ -116,7 +120,7 @@ export default function Experience() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-zinc-50/[0.3] dark:bg-zinc-900/[0.15]">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-zinc-50/[0.3] dark:bg-zinc-900/[0.15]">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
             label="Impact"
@@ -147,14 +151,15 @@ export default function Experience() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <SectionHeader
-          label="Skills"
-          title="Technical Mastery"
-          description="A comprehensive toolkit built over years of hands-on iOS and frontend development."
-        />
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader
+            label="Skills"
+            title="Technical Mastery"
+            description="A comprehensive toolkit built over years of hands-on iOS and frontend development."
+          />
 
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
           <button
             onClick={() => setActiveCategory('All')}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
@@ -185,7 +190,7 @@ export default function Experience() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="max-w-3xl mx-auto space-y-6"
+          className="space-y-6"
         >
           {filteredSkills.map((skill, index) => (
             <motion.div key={skill.name} variants={fadeInUp} className="space-y-2">

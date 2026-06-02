@@ -11,19 +11,6 @@ export async function generateResumePDF() {
   let y = margin
 
   const accent = '#0071e3'
-  const dark = '#1a1a2e'
-  const gray = '#64748b'
-  const lightGray = '#f1f5f9'
-
-  const addText = (text, x, yPos, options = {}) => {
-    const { size = 10, color = dark, bold = false, align = 'left' } = options
-    doc.setFontSize(size)
-    doc.setTextColor(color[0] || parseInt(color.slice(1, 3), 16), color[1] || parseInt(color.slice(3, 5), 16), color[2] || parseInt(color.slice(5, 7), 16))
-    if (bold) doc.setFont('helvetica', 'bold')
-    else doc.setFont('helvetica', 'normal')
-    doc.text(text, x, yPos, { align })
-    if (bold) doc.setFont('helvetica', 'normal')
-  }
 
   const drawLine = (yPos, color = accent, width = contentWidth) => {
     doc.setDrawColor(color[0] || parseInt(color.slice(1, 3), 16), color[1] || parseInt(color.slice(3, 5), 16), color[2] || parseInt(color.slice(5, 7), 16))

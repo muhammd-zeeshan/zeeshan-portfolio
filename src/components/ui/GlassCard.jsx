@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion'
 
-export default function GlassCard({ children, className = '', hover = true, glow = false, ...props }) {
+export default function GlassCard({ children, className = '', hover = true, glow = false, padding = 'p-6', ...props }) {
+  // Extract padding override from className if present
+  const hasPadding = className.includes('!p-') || className.includes('p-')
+  const finalPadding = hasPadding ? '' : padding
+
   return (
     <motion.div
       whileHover={hover ? { y: -3, scale: 1.005 } : undefined}
@@ -8,7 +12,7 @@ export default function GlassCard({ children, className = '', hover = true, glow
       className={`relative ${glow ? 'glow-border' : ''} ${className}`}
       {...props}
     >
-      <div className={`glass-card h-full ${hover ? 'hover:shadow-2xl hover:shadow-accent/5' : ''}`}>
+      <div className={`glass-card h-full ${finalPadding} ${hover ? 'hover:shadow-2xl hover:shadow-accent/5' : ''}`}>
         {children}
       </div>
     </motion.div>

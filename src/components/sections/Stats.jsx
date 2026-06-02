@@ -11,7 +11,6 @@ function AnimatedCounter({ value, isVisible }) {
     if (!isVisible) return
 
     const num = parseInt(value.replace(/[^0-9]/g, ''))
-    const suffix = value.replace(/[0-9]/g, '')
     const duration = 2000
     const steps = 60
     const increment = num / steps
@@ -28,7 +27,6 @@ function AnimatedCounter({ value, isVisible }) {
     return () => clearInterval(timer)
   }, [isVisible, value])
 
-  const num = parseInt(value.replace(/[^0-9]/g, ''))
   const suffix = value.replace(/[0-9]/g, '')
 
   return (

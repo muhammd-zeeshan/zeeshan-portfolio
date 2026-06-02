@@ -1,6 +1,8 @@
 import { useState, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { Search, ExternalLink, GitBranch } from 'lucide-react'
+import usePageSEO from '../hooks/usePageSEO'
+import { pageMetadata } from '../utils/pageMetadata'
 import SectionHeader from '../components/ui/SectionHeader'
 import GlassCard from '../components/ui/GlassCard'
 import Badge from '../components/ui/Badge'
@@ -8,6 +10,7 @@ import { projects, projectCategories } from '../data/projects'
 import { fadeInUp, stagger } from '../components/animations/variants'
 
 export default function Projects() {
+  usePageSEO(pageMetadata.projects)
   const [activeCategory, setActiveCategory] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
 

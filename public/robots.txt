@@ -1,0 +1,26 @@
+# robots.txt - Search Engine Crawling Guidelines
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+
+# Specific search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://muhammadzeeshan.dev/sitemap.xml
+Sitemap: https://zeeshan-portfolio.vercel.app/sitemap.xml
+
+# Cache rules
+Request-rate: 30/60
+Visit-time: 0000-2359

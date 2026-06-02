@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion'
 import { Star, Quote } from 'lucide-react'
+import usePageSEO from '../hooks/usePageSEO'
+import { pageMetadata } from '../utils/pageMetadata'
 import { testimonials } from '../data/testimonials'
 import SectionHeader from '../components/ui/SectionHeader'
 import GlassCard from '../components/ui/GlassCard'
 import { fadeInUp, stagger } from '../components/animations/variants'
 
 export default function Testimonials() {
+  usePageSEO(pageMetadata.testimonials)
   return (
     <section className="section-padding relative overflow-hidden">
       <div className="max-w-container">

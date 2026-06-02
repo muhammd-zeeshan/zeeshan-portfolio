@@ -26,7 +26,7 @@ export default function ExperienceHighlights() {
         {/* Timeline line */}
         <div className="absolute left-[13px] sm:left-[17px] top-0 bottom-0 w-px bg-gradient-to-b from-accent/50 via-accent/20 to-transparent" />
 
-        {latestExperiences.map((exp, index) => (
+        {latestExperiences.map((exp) => (
           <motion.div
             key={exp.id}
             variants={fadeInUp}

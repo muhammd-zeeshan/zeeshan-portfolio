@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import { Mail, MessageCircle, MapPin, Calendar, Code2, AtSign, UserCheck } from 'lucide-react'
+import usePageSEO from '../hooks/usePageSEO'
+import { pageMetadata } from '../utils/pageMetadata'
 import SectionHeader from '../components/ui/SectionHeader'
 import GlassCard from '../components/ui/GlassCard'
 import Button from '../components/ui/Button'
@@ -7,6 +9,7 @@ import ContactForm from '../components/ui/ContactForm'
 import { fadeInUp, stagger } from '../components/animations/variants'
 
 export default function Contact() {
+  usePageSEO(pageMetadata.contact)
 
   const contactInfo = [
     {

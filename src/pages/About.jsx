@@ -2,8 +2,10 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import {
   MapPin, Mail, Code2, Cpu, Zap, BookOpen,
-  Globe, Users, Target, Eye, Wifi, Briefcase, ArrowRight,
+  Globe, Users, Target, Eye, Wifi, Briefcase,
 } from 'lucide-react'
+import usePageSEO from '../hooks/usePageSEO'
+import { pageMetadata } from '../utils/pageMetadata'
 import SectionHeader from '../components/ui/SectionHeader'
 import GlassCard from '../components/ui/GlassCard'
 import Badge from '../components/ui/Badge'
@@ -58,6 +60,7 @@ const brandingCards = [
 ]
 
 export default function About() {
+  usePageSEO(pageMetadata.about)
   const [activeSkillCategory, setActiveSkillCategory] = useState('All')
 
   const filteredSkills =
@@ -68,13 +71,13 @@ export default function About() {
   return (
     <main className="min-h-screen pt-24 pb-20">
       {/* ── Hero Section ── */}
-      <section className="relative overflow-hidden pb-16 sm:pb-24">
+      <section className="relative overflow-hidden pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 bg-gradient-to-b from-accent/[0.03] via-transparent to-transparent pointer-events-none" />
         <motion.div
           variants={stagger}
           initial="hidden"
           animate="visible"
-          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+          className="max-w-7xl mx-auto"
         >
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div variants={fadeInUp} className="space-y-6">
@@ -135,8 +138,8 @@ export default function About() {
       </section>
 
       {/* ── Achievement Stats ── */}
-      <section className="py-12 sm:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             variants={stagger}
             initial="hidden"

@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import { pageTransition } from '../components/animations/variants'
+import usePageSEO from '../hooks/usePageSEO'
+import { pageMetadata } from '../utils/pageMetadata'
 import Hero from '../components/sections/Hero'
 import Stats from '../components/sections/Stats'
 import FeaturedProjects from '../components/sections/FeaturedProjects'
@@ -8,6 +10,8 @@ import ExperienceHighlights from '../components/sections/ExperienceHighlights'
 import CTASection from '../components/sections/CTASection'
 
 export default function Home() {
+  usePageSEO(pageMetadata.home)
+
   return (
     <motion.div
       initial={pageTransition.initial}
